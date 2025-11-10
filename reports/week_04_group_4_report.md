@@ -4,8 +4,9 @@
 
 | Name | Contribution |
 | :--- | :--- |
-| Group 4 (butel) | Data loading, cleaning, feature engineering, analysis, and visualization. |
+| Group 4 (Betül) | Data loading, cleaning, feature engineering, analysis, and visualization. |
 | Group 4 (Tejas) | Data loading, cleaning, feature engineering, and report preparation. |
+| Group 4 (Julian Hermes) | Data loading, cleaning, feature engineering, and report preparation. |
 
 ---
 
