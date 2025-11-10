@@ -152,7 +152,7 @@ This analysis explored what differentiates Superhosts from normal hosts.
 ![Distribution of Distance to the City](../additional_material/images/Distribution_of_distance_to_the_city.png)
 
 ### 4. Distribution of Log Cleanliness Rating by Superhost Status
-![Distribution of Log Cleanliness Rating by Superhost Status](../additional_material/images/images/Distribution_of_log_cleanliness_rating_by_superhost_status.png)
+![Distribution of Log Cleanliness Rating by Superhost Status](../additional_material/images/Distribution_of_log_cleanliness_rating_by_superhost_status.png)
 
 ### 5. Guest Score Distributions Overview
 ![Guest Score Distributions Overview](../additional_material/images/Guest_score_distributions_overview.png)
