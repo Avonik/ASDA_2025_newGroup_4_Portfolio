@@ -113,12 +113,20 @@ This analysis explores patterns in Airbnb listings, pricing, and host characteri
 ### Guest Satisfaction
 
 Guest ratings are **overwhelmingly positive** across the dataset. Both `guest_satisfaction_overall` and `cleanliness_rating` distributions are heavily left-skewed.
+
+![Guest Score Distributions Overview](../additional_material/images/Guest_score_distributions_overview.png)
+
+
 * **Overall Satisfaction:** The median score is **95 out of 100**, with 75% of listings scoring 90 or above.
 * **Cleanliness:** The median rating is **10 out of 10**, with 75% of listings scoring 9 or above.
 
 ### Pricing Analysis
 
 Prices are heavily right-skewed (a few very expensive listings pull up the mean), so a log-transformed price (`price_log`) was created and used for comparative analysis.
+
+![Price Distribution by Day Type](../additional_material/images/Price_distribution_by_day_type.png)
+
+![Price Distribution by Day Type 1](../additional_material/images/Price_distribution_by_day_type1.png)
 
 * **Weekend vs. Weekday Pricing:** Listings are significantly more expensive on **weekends** compared to weekdays (t-stat: -7.25, p-value: 4.24e-13).
 * **Price by Room Type:** As expected, **'Entire home/apt'** listings are significantly more expensive than 'Private room' listings (t-stat: 82.0, p-value: 0.0). This trend is consistent across all 10 cities. The price gap, however, varies by city; it is most pronounced in Barcelona (median log-price 6.21 vs. 5.23) and smallest in Paris (5.83 vs. 5.54).
@@ -134,36 +142,15 @@ This analysis explored what differentiates Superhosts from normal hosts.
 * **Prevalence:** Superhost status is not evenly distributed. **Athens** has the highest proportion of Superhosts (43%), while **Paris** (14%) and **London** (16%) have the lowest.
 * **Pricing:** Contrary to what one might expect, listings by Superhosts are significantly **less expensive** than those by normal hosts (t-stat: -16.82, p-value: 3.98e-63).
 * **Location:**
-    * Superhosts are significantly **closer to the city center** (lower log-distance) than normal hosts (t-stat: -13.54, p-value: 1.29e-41).
-    * However, they are also significantly **further from the nearest metro station** (higher log-distance) (t-stat: 5.17, p-value: 2.41e-07). This suggests Superhosts may be concentrated in central, walkable neighborhoods where immediate metro access is less critical.
-* **Cleanliness:** Superhosts are demonstrably cleaner. A Mann-Whitney U test (used for the skewed rating data) confirms that Superhosts have significantly **higher cleanliness ratings** (median 10/10) than normal hosts (median 9/10) (p-value: 0.0).
-* **Room Type:** There is a significant association between room type and Superhost status (Chi-Square p-value: 0.0000). The status is most common for **'Entire home/apt'** (27.4% of these hosts are Superhosts) and least common for **'Shared room'** (only 11.2% are Superhosts).
-
----
-
-## 6. Visualizations
-
-### 1. Distribution of Cleanliness Ratings by Superhost Status
-![Distribution of Cleanliness Ratings by Superhost Status](../additional_material/images/Distribution_of_cleanliness_ratings_by_superhost_status.png)
-
-### 2. Distribution of Distance to Metro Station by Superhost Status
-![Distribution of Distance to Metro Station by Superhost Status](../additional_material/images/Distribution_of_distance_to_metro_station_by_superhost_status.png)
-
-### 3. Distribution of Distance to the City
 ![Distribution of Distance to the City](../additional_material/images/Distribution_of_distance_to_the_city.png)
-
-### 4. Distribution of Log Cleanliness Rating by Superhost Status
+    * Superhosts are significantly **closer to the city center** (lower log-distance) than normal hosts (t-stat: -13.54, p-value: 1.29e-41).
+  ![Distribution of Distance to Metro Station by Superhost Status](../additional_material/images/Distribution_of_distance_to_metro_station_by_superhost_status.png)
+    * However, they are also significantly **further from the nearest metro station** (higher log-distance) (t-stat: 5.17, p-value: 2.41e-07). This suggests Superhosts may be concentrated in central, walkable neighborhoods where immediate metro access is less critical.
+* **Cleanliness:**
+![Distribution of Cleanliness Ratings by Superhost Status](../additional_material/images/Distribution_of_cleanliness_ratings_by_superhost_status.png)
 ![Distribution of Log Cleanliness Rating by Superhost Status](../additional_material/images/Distribution_of_log_cleanliness_rating_by_superhost_status.png)
-
-### 5. Guest Score Distributions Overview
-![Guest Score Distributions Overview](../additional_material/images/Guest_score_distributions_overview.png)
-
-### 6. Price Distribution by Day Type
-![Price Distribution by Day Type](../additional_material/images/Price_distribution_by_day_type.png)
-
-### 7. Price Distribution by Day Type (Alternative)
-![Price Distribution by Day Type 1](../additional_material/images/Price_distribution_by_day_type1.png)
-
+* Due to the extreme left-skewness and ceiling effect observed in the cleanliness ratings (with one group's median being 10), the difference between the two independent groups was analyzed using the non-parametric Mann-Whitney U Test. his statistical separation, strongly demonstrated by the Superhost group's median rating of 10, validates that superior and consistent cleanliness is a definitive and measurable differentiator for their status.
+* **Room Type:** There is a significant association between room type and Superhost status (Chi-Square p-value: 0.0000). The status is most common for **'Entire home/apt'** (27.4% of these hosts are Superhosts) and least common for **'Shared room'** (only 11.2% are Superhosts).
 ---
 
 ## 7. Conclusion
@@ -180,4 +167,4 @@ This analysis provides an initial foundation for deeper modeling, such as predic
 
 ## 8. AI Disclaimer
 
-I used AI tools to assist in performing **Chi-Square** and **Mann-Whitney U** statistical tests, as well as for generating parts of the written analysis and visualization explanations. All final interpretations, coding, and conclusions were reviewed and verified manually.
+We used AI tools to assist in performing **Chi-Square** and **Mann-Whitney U** statistical tests, as well as for generating parts of the written analysis and visualization explanations. All final interpretations, coding, and conclusions were reviewed and verified manually.
