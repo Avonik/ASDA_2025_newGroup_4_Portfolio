@@ -73,21 +73,23 @@ The most striking inequality is visible in **Life Expectancy**.
 * **The Gap:** There is a dramatic staircase effect. High-income nations sit at the top with life expectancies averaging over 70 years, while Low-income nations struggle in the low 50s.
 * **The Driver:** This disparity is strongly correlated with `gdp_current_us` and `access_to_electricity` (Correlation: 0.83), indicating that economic infrastructure is a prerequisite for public health.
 
-![img_9.png](img_9.png)
+<img width="946" height="550" alt="image" src="https://github.com/user-attachments/assets/7f46ad03-34e2-46a0-808f-4bc0c45f6ba0" />
+
 
 ### II. The Carbon Cost of Wealth
 Prosperity comes with a price. Our analysis shows a strong positive correlation between **Income/GDP** and **CO2 Emissions**.
 * **The Trend:** As countries climb the income ladder, their carbon footprint expands. High-income countries are the largest emitters per capita.
 * **The Twist:** Interestingly, `renewable_energy_consumption` shows a *negative* correlation with income in many cases. This reveals that many low-income nations rely on traditional renewable biomass (wood/waste) for fuel, whereas developing middle-income nations switch to fossil fuels to power rapid industrialization. Only at the highest income levels do we see a technological return to modern renewables, creating a U-shaped sustainability curve.
 
-![img_8.png](img_8.png)
+<img width="905" height="567" alt="image" src="https://github.com/user-attachments/assets/1bbee65e-838f-4ad9-9808-17ee1609488b" />
 
 ### III. The Digital and Physical Divide
 Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the modern economy.
 * **High Income:** Near 100% saturation.
 * **Low Income:** High variance, with many nations having less than 50% access. This infrastructure gap makes it exponentially harder for these economies to catch up, creating a feedback loop of inequality.
 
-![img_7.png](img_7.png)
+<img width="1063" height="644" alt="image" src="https://github.com/user-attachments/assets/b79c583d-866e-432d-a49a-3264624781ee" />
+
 
 
 
@@ -100,10 +102,12 @@ A powerful indicator of a nation's development phase is the relationship between
   * **High Income / Developed:** These nations cluster in the bottom-right, with low birth rates (< 15 per 1000) and high life expectancy (> 75 years).
 * **Statistical Significance:** Our ANOVA and Tukey post-hoc tests on `log_birth_rate` confirmed that these differences between income groups are statistically significant, verifying that the demographic shift is a fundamental structural change that accompanies economic growth.
 
-![img_5.png](img_5.png)
+<img width="856" height="600" alt="image" src="https://github.com/user-attachments/assets/0b4fa649-be02-40c6-96bf-a4d0cfdbaa02" />
+
 
 ### IV. Conclusion
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
