@@ -110,307 +110,31 @@ Interpretation: A lower intensity suggests more economically efficient (cleaner)
 
 *   The distribution is more normalized after we clean outliers. We can run Anova test now.
 
- 
-  
-    
+	                 sum_sq	   df	       F         	PR(>F)
+C(income_group)	0.000034	  3.0	   186.506945	1.233504e-114
+Residual       	0.000305	  4995.0	   NaN	       NaN
 
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+*   Following the application of a square-root transformation and the removal of outliers via the IQR method to ensure the assumption of normality, a One-Way ANOVA was performed. The results revealed a highly statistically significant difference in the mean environmental efficiency ($\text{Sqrt}(\text{CO}_2/\text{GDP})$) across the four income groups ($F(3, 54995) = 186.51$, $\mathbf{P < 0.001}$). This strong significance rejects the null hypothesis, definitively confirming that the observed differences in mean Carbon Intensity—where the Upper Middle Income group is the most intensive and the High Income group is significantly cleaner—are not due to chance, but represent real structural variations in global economic development.
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+![Residuals & Residuals vs Fitted Values](../additional_material/images/3residuals_co2_instensity.png)
 
-    .dataframe thead th {
-        text-align: right;
-    }
+*  The diagnostic plots confirm the model's reliability. The Residuals Histogram shows the errors are roughly normally distributed, and because the sample size is large, the slight observed skewness does not undermine the analysis. Crucially, the Residuals vs Fitted Values plot confirms the error variance is consistent across all income groups. These successful checks validate the highly significant ANOVA finding ($\mathbf{P < 0.001}$), confirming that the differences in environmental efficiency are statistically robust.
 
+Explained Variance: 0.101
 
-  
-    
-      
-      sum_sq
-      df
-      F
-      PR(>F)
-    
-  
-  
-    
-      C(income_group)
-      0.000034
-      3.0
-      186.506945
-      1.233504e-114
-    
-    
-      Residual
-      0.000305
-      4995.0
-      NaN
-      NaN
-    
-  
+*   The ANOVA test confirms that Income Group is a statistically significant factor in determining Carbon Intensity ( P<0.001 ). However, the model's Explained Variance ( R2 ) is low at 0.101. This means the income classification successfully shows that differences exist (statistical significance), but it only accounts for 10.1% of the total change in environmental efficiency. The remaining variability must be driven by other factors not included in this model, such as national energy policies or industrial structure.
 
-
-    
-
-  
-    
-
-  
-    
-  
-    
-
-  
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  
-
-    
-      const buttonEl =
-        document.querySelector('#df-24947956-cfaa-42c7-9806-a8b210d1b190 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-24947956-cfaa-42c7-9806-a8b210d1b190');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    
-  
-
-
-    
-      
-
-
-    
-        
-    
-
-      
-
-
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-
-
-      
-        async function quickchart(key) {
-          const quickchartButtonEl =
-            document.querySelector('#' + key + ' button');
-          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-          quickchartButtonEl.classList.add('colab-df-spinner');
-          try {
-            const charts = await google.colab.kernel.invokeFunction(
-                'suggestCharts', [key], {});
-          } catch (error) {
-            console.error('Error during call to suggestCharts:', error);
-          }
-          quickchartButtonEl.classList.remove('colab-df-spinner');
-          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-        }
-        (() => {
-          let quickchartButtonEl =
-            document.querySelector('#df-f3527b35-d663-4837-85ca-2a9353f3c942 button');
-          quickchartButtonEl.style.display =
-            google.colab.kernel.accessAllowed ? 'block' : 'none';
-        })();
-      
-    
-
-  
-    
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    
-    
-
-  
-    
-  
-    
-    
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_56975e16-10df-49f0-a337-87ba26d2bb82 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('aov_table2');
-      }
-      })();
-    
-  
-
-    
-  
-
+             Multiple Comparison of Means - Tukey HSD, FWER=0.05              
+==============================================================================
+       group1              group2       meandiff p-adj   lower   upper  reject
+------------------------------------------------------------------------------
+        High income          Low income  -0.0001    0.0 -0.0001 -0.0001   True
+        High income Lower middle income   0.0001    0.0  0.0001  0.0001   True
+        High income Upper middle income   0.0001    0.0  0.0001  0.0002   True
+         Low income Lower middle income   0.0002    0.0  0.0002  0.0002   True
+         Low income Upper middle income   0.0002    0.0  0.0002  0.0003   True
+Lower middle income Upper middle income      0.0 0.0001     0.0  0.0001   True
+------------------------------------------------------------------------------
 
 ### III. The Digital and Physical Divide
 Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the modern economy.
@@ -419,8 +143,7 @@ Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the m
 
 <img width="1063" height="644" alt="image" src="https://github.com/user-attachments/assets/b79c583d-866e-432d-a49a-3264624781ee" />
 
-
-
+*  The Tukey HSD test confirmed that the differences in mean $\mathbf{\text{Sqrt}(\text{Carbon Intensity})}$ are statistically significant ($\mathbf{p < 0.05}$ for all pairs) between every income group pair. This analysis definitively validates the structural ranking of environmental efficiency, proving that the economic development phase is a genuine driver of relative pollution. Crucially, the test confirms that the Upper middle income group is statistically more carbon-intensive than the High income group ($\text{meandiff} = 0.0001, \mathbf{p=0.0}$), providing robust evidence that the peak environmental burden occurs precisely during the rapid industrialization stage.
 
 
 ### IV. The Demographic Transition: Life Expectancy vs. Birth Rate
@@ -434,12 +157,61 @@ A powerful indicator of a nation's development phase is the relationship between
 
 <img width="856" height="600" alt="image" src="https://github.com/user-attachments/assets/0b4fa649-be02-40c6-96bf-a4d0cfdbaa02" />
 
+**Birth Rate by Income Groups**
+
+![Histogram and Boxplot Birth Rate](../additional_material/images/8birth_rate_box.png)
+
+* It is right skewed. We try log-transformation:
+
+![Histogram of Birth Rate](../additional_material/images/7histogram_birthrate.png)
+
+*  The bimodal distribution observed after the log transformation is most likely a result of the distinct, separate characteristics of your different income groups, where each group clusters around its own average birth rate.
+
+Anova test results:
+	                sum_sq	    df	      F         	PR(>F)
+C(income_group)	886.614988	3.0	   3281.471483	  0.0
+Residual       	555.146760	6164.0 	NaN	         NaN
+
+Null Hypothesis:  
+
+$$H_0: \mu_{\text{High}} = \mu_{\text{Low}} = \mu_{\text{Lower Middle}} = \mu_{\text{Upper Middle}}$$
+
+Which implies: There is no statistically significant difference in the mean of the dependent variable across the four income groups (High income, Low income, Lower middle income, and Upper middle income).
+
+The ANOVA test shows a highly significant difference in the mean of the dependent variable across the income groups, with an extremely large F-statistic of 3281.47 and a P-value of $0.0$ (rejecting the null hypothesis).
+
+![Residuals & Residuals vs Fitted Values](../additional_material/images/7histogram_birthrate.png)
+
+*  The plot of residuals against fitted values reveals four distinct vertical clusters, as expected for a model with a categorical predictor. However, the variance of the residuals appears non-constant across these clusters, suggesting a violation of the homoskedasticity assumption. This non-random pattern indicates that the model's standard errors and the validity of inference may be compromised, despite the residuals reportedly being normally distributed.
+
+Explained Variance: 0.615
+
+*  Based on the **ANOVA** results, the income groups account for $61.5\%$ of the total variance in the dependent variable ($R^2 = 0.615$), which, combined with the significant F-statistic (3281.47) and $P$-value ($0.0$), confirms that the groups are a powerful and statistically significant predictor in the model.
+
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05             
+=============================================================================
+       group1              group2       meandiff p-adj  lower   upper  reject
+-----------------------------------------------------------------------------
+        High income          Low income   1.0368   0.0  1.0041  1.0695   True
+        High income Lower middle income    0.782   0.0  0.7561  0.8078   True
+        High income Upper middle income   0.3632   0.0  0.3384  0.3879   True
+         Low income Lower middle income  -0.2548   0.0 -0.2901 -0.2195   True
+         Low income Upper middle income  -0.6736   0.0 -0.7082 -0.6391   True
+Lower middle income Upper middle income  -0.4188   0.0 -0.4469 -0.3907   True
+-----------------------------------------------------------------------------
+
+*  **The Tukey HSD test** confirmed that the mean difference in $\mathbf{\text{Log}(\text{Birth Rate})}$ between every possible pair of income groups is statistically significant ($\mathbf{p < 0.05}$ for all pairs). This finding provides definitive quantitative support for the Demographic Transition Model, proving that each stage of economic development (income group) is associated with a unique and distinct average birth rate. The largest statistical difference was found between the two extremes, with Low income countries exhibiting a significantly higher mean birth rate than High income countries ($\text{meandiff} = 1.0368$).
+
+### IV. GDP across Regions
+
+![Histogram of GDP](../additional_material/images/4histogram_gdp.png)
 
 ---
-### IV. Conclusion
+### V. Conclusion
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
