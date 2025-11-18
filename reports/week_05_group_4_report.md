@@ -83,7 +83,7 @@ Prosperity comes with a price. Our analysis shows a strong positive correlation 
 
 <img width="905" height="567" alt="image" src="https://github.com/user-attachments/assets/1bbee65e-838f-4ad9-9808-17ee1609488b" />
 
-**Average Carbon Intensity (CO2 / GDP) by Income Group**
+#### **Average Carbon Intensity (CO2 / GDP) by Income Group**
 
 | Income Group | Carbon Intensity (Scaled Average $\text{CO}_2$ / GDP) |
 | :--- | :--- |
@@ -123,7 +123,7 @@ Explained Variance: 0.101
 
 *   The ANOVA test confirms that Income Group is a statistically significant factor in determining Carbon Intensity ( P<0.001 ). However, the model's Explained Variance ( R2 ) is low at 0.101. This means the income classification successfully shows that differences exist (statistical significance), but it only accounts for 10.1% of the total change in environmental efficiency. The remaining variability must be driven by other factors not included in this model, such as national energy policies or industrial structure.
 
-## 📊 Multiple Comparison of Means - Tukey HSD (FWER=0.05)
+Multiple Comparison of Means - Tukey HSD (FWER=0.05)
 
 | group1 | group2 | meandiff | p-adj | lower | upper | reject |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -155,7 +155,7 @@ A powerful indicator of a nation's development phase is the relationship between
 
 <img width="856" height="600" alt="image" src="https://github.com/user-attachments/assets/0b4fa649-be02-40c6-96bf-a4d0cfdbaa02" />
 
-**Birth Rate by Income Groups**
+#### **Birth Rate by Income Groups**
 
 ![Histogram and Boxplot Birth Rate](../additional_material/images/8birth_rate_box.png)
 
@@ -257,6 +257,7 @@ Multiple Comparison of Means - Tukey HSD (FWER=0.05) by Region
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
