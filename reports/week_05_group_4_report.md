@@ -2,6 +2,9 @@
 
 ## 0. Authors of the report
 * **Name:** Group 4 Data Analysis Team
+*  Betul: Data Cleaning, Statistical Analysis, Visualisation, Reporting
+*  Tejas: Data Cleaning, Statistical Analysis, Visualisation
+*  Julian: Reporting
 
 ---
 
@@ -257,6 +260,7 @@ Multiple Comparison of Means - Tukey HSD (FWER=0.05) by Region
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
