@@ -85,15 +85,13 @@ Prosperity comes with a price. Our analysis shows a strong positive correlation 
 
 **Average Carbon Intensity (CO2 / GDP) by Income Group**
 
-Scaled Average Carbon Intensity (CO2 / GDP) by Income Group:
------------------------------------------------------
-income_group
-Upper middle income    1.695194
-Lower middle income    0.835624
-High income            0.650598
-Low income             0.359056
-Name: carbon_intensity, dtype: float64
------------------------------------------------------
+| Income Group | Carbon Intensity (Scaled Average $\text{CO}_2$ / GDP) |
+| :--- | :--- |
+| **Upper middle income** | $1.695194$ |
+| **Lower middle income** | $0.835624$ |
+| **High income** | $0.650598$ |
+| **Low income** | $0.359056$ |
+
 Interpretation: A lower intensity suggests more economically efficient (cleaner) production.
 
 *   The analysis of average Carbon Intensity ($\text{CO}_2$/$\text{GDP}$) shows a non-monotonic trend where the Upper middle income group is the most intensive (1.675 tons $\text{CO}_2$ per Million USD GDP), while the High income group is significantly cleaner (0.647 tons), reflecting improved efficiency post-industrialization.
@@ -110,9 +108,10 @@ Interpretation: A lower intensity suggests more economically efficient (cleaner)
 
 *   The distribution is more normalized after we clean outliers. We can run Anova test now.
 
-	                 sum_sq	   df	       F         	PR(>F)
-C(income_group)	0.000034	  3.0	   186.506945	1.233504e-114
-Residual       	0.000305	  4995.0	   NaN	       NaN
+|      | sum\_sq | df | F | PR(>F) |
+| :--- | :--- | :--- | :--- | :--- |
+| **C(income\_group)** | $0.000034$ | $3.0$ | $186.506945$ | $1.233504 \times 10^{-114}$ |
+| **Residual** | $0.000305$ | $4995.0$ | NaN | NaN |
 
 *   Following the application of a square-root transformation and the removal of outliers via the IQR method to ensure the assumption of normality, a One-Way ANOVA was performed. The results revealed a highly statistically significant difference in the mean environmental efficiency ($\text{Sqrt}(\text{CO}_2/\text{GDP})$) across the four income groups ($F(3, 54995) = 186.51$, $\mathbf{P < 0.001}$). This strong significance rejects the null hypothesis, definitively confirming that the observed differences in mean Carbon Intensity—where the Upper Middle Income group is the most intensive and the High Income group is significantly cleaner—are not due to chance, but represent real structural variations in global economic development.
 
@@ -124,17 +123,16 @@ Explained Variance: 0.101
 
 *   The ANOVA test confirms that Income Group is a statistically significant factor in determining Carbon Intensity ( P<0.001 ). However, the model's Explained Variance ( R2 ) is low at 0.101. This means the income classification successfully shows that differences exist (statistical significance), but it only accounts for 10.1% of the total change in environmental efficiency. The remaining variability must be driven by other factors not included in this model, such as national energy policies or industrial structure.
 
-             Multiple Comparison of Means - Tukey HSD, FWER=0.05              
-==============================================================================
-       group1              group2       meandiff p-adj   lower   upper  reject
-------------------------------------------------------------------------------
-        High income          Low income  -0.0001    0.0 -0.0001 -0.0001   True
-        High income Lower middle income   0.0001    0.0  0.0001  0.0001   True
-        High income Upper middle income   0.0001    0.0  0.0001  0.0002   True
-         Low income Lower middle income   0.0002    0.0  0.0002  0.0002   True
-         Low income Upper middle income   0.0002    0.0  0.0002  0.0003   True
-Lower middle income Upper middle income      0.0 0.0001     0.0  0.0001   True
-------------------------------------------------------------------------------
+## 📊 Multiple Comparison of Means - Tukey HSD (FWER=0.05)
+
+| group1 | group2 | meandiff | p-adj | lower | upper | reject |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **High income** | **Low income** | $-0.0001$ | $0.0$ | $-0.0001$ | $-0.0001$ | True |
+| **High income** | **Lower middle income** | $0.0001$ | $0.0$ | $0.0001$ | $0.0001$ | True |
+| **High income** | **Upper middle income** | $0.0001$ | $0.0$ | $0.0001$ | $0.0002$ | True |
+| **Low income** | **Lower middle income** | $0.0002$ | $0.0$ | $0.0002$ | $0.0002$ | True |
+| **Low income** | **Upper middle income** | $0.0002$ | $0.0$ | $0.0002$ | $0.0003$ | True |
+| **Lower middle income** | **Upper middle income** | $0.0000$ | $0.0001$ | $0.0000$ | $0.0001$ | True |
 
 ### III. The Digital and Physical Divide
 Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the modern economy.
@@ -168,9 +166,11 @@ A powerful indicator of a nation's development phase is the relationship between
 *  The bimodal distribution observed after the log transformation is most likely a result of the distinct, separate characteristics of your different income groups, where each group clusters around its own average birth rate.
 
 Anova test results:
-	                sum_sq	    df	      F         	PR(>F)
-C(income_group)	886.614988	3.0	   3281.471483	  0.0
-Residual       	555.146760	6164.0 	NaN	         NaN
+
+| Kaynak | sum\_sq | df | F | PR(>F) |
+| :--- | :--- | :--- | :--- | :--- |
+| **C(income\_group)** | $886.614988$ | $3.0$ | $3281.471483$ | $0.0$ |
+| **Residual** | $555.146760$ | $6164.0$ | NaN | NaN |
 
 Null Hypothesis:  
 
@@ -188,17 +188,16 @@ Explained Variance: 0.615
 
 *  Based on the **ANOVA** results, the income groups account for $61.5\%$ of the total variance in the dependent variable ($R^2 = 0.615$), which, combined with the significant F-statistic (3281.47) and $P$-value ($0.0$), confirms that the groups are a powerful and statistically significant predictor in the model.
 
- Multiple Comparison of Means - Tukey HSD, FWER=0.05             
-=============================================================================
-       group1              group2       meandiff p-adj  lower   upper  reject
------------------------------------------------------------------------------
-        High income          Low income   1.0368   0.0  1.0041  1.0695   True
-        High income Lower middle income    0.782   0.0  0.7561  0.8078   True
-        High income Upper middle income   0.3632   0.0  0.3384  0.3879   True
-         Low income Lower middle income  -0.2548   0.0 -0.2901 -0.2195   True
-         Low income Upper middle income  -0.6736   0.0 -0.7082 -0.6391   True
-Lower middle income Upper middle income  -0.4188   0.0 -0.4469 -0.3907   True
------------------------------------------------------------------------------
+Multiple Comparison of Means - Tukey HSD (FWER=0.05)
+
+| group1 | group2 | meandiff | p-adj | lower | upper | reject |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **High income** | **Low income** | $1.0368$ | $0.0$ | $1.0041$ | $1.0695$ | True |
+| **High income** | **Lower middle income** | $0.7820$ | $0.0$ | $0.7561$ | $0.8078$ | True |
+| **High income** | **Upper middle income** | $0.3632$ | $0.0$ | $0.3384$ | $0.3879$ | True |
+| **Low income** | **Lower middle income** | $-0.2548$ | $0.0$ | $-0.2901$ | $-0.2195$ | True |
+| **Low income** | **Upper middle income** | $-0.6736$ | $0.0$ | $-0.7082$ | $-0.6391$ | True |
+| **Lower middle income** | **Upper middle income** | $-0.4188$ | $0.0$ | $-0.4469$ | $-0.3907$ | True |
 
 *  **The Tukey HSD test** confirmed that the mean difference in $\mathbf{\text{Log}(\text{Birth Rate})}$ between every possible pair of income groups is statistically significant ($\mathbf{p < 0.05}$ for all pairs). This finding provides definitive quantitative support for the Demographic Transition Model, proving that each stage of economic development (income group) is associated with a unique and distinct average birth rate. The largest statistical difference was found between the two extremes, with Low income countries exhibiting a significantly higher mean birth rate than High income countries ($\text{meandiff} = 1.0368$).
 
@@ -212,9 +211,12 @@ Lower middle income Upper middle income  -0.4188   0.0 -0.4469 -0.3907   True
 
 * 	Data is normalized after log-transformation. We can run ANOVA.
 
-				sum_sq			df		F		PR(>F)
-C(region)	5118.571504		6.0		169.482345	2.571617e-199
-Residual	29390.808633	5839.0	NaN			NaN
+ANOVA Results:
+
+| Kaynak | sum\_sq | df | F | PR(>F) |
+| :--- | :--- | :--- | :--- | :--- |
+| **C(region)** | $5118.571504$ | $6.0$ | $169.482345$ | $2.571617 \times 10^{-199}$ |
+| **Residual** | $29390.808633$ | $5839.0$ | NaN | NaN |
 
 * 	The ANOVA test confirms that Region is a highly statistically significant factor in determining a country's economic status, measured by $\text{Log}(\text{GDP})$. With a negligible $\mathbf{P\text{-value} \ (PR(>F) \approx 0.0)}$ and an extremely high $\mathbf{F\text{-statistic} \ (169.48)}$, the null hypothesis is strongly rejected. This result definitively proves that the average $\text{Log}(\text{GDP})$ varies significantly across the 7 regions, confirming that geography and regional economic structure are critical determinants of a country's wealth. The high F-statistic indicates that the variation explained by the regions ($\mathbf{sum\_sq} = 5118.57$) is substantially larger than the unexplained error.
 
@@ -222,32 +224,31 @@ Residual	29390.808633	5839.0	NaN			NaN
 
 * 	The diagnostic plots confirm the model's reliability for the ANOVA test. The Residuals Histogram shows the errors are roughly normally distributed, which is good. Although the Residuals vs Fitted Values plot suggests a slight violation of the homoskedasticity (unequal error spread) across the seven regional clusters, this is overcome by the large sample size. Because the test is robust, the finding that regions significantly affect $\text{Log}(\text{GDP})$ ($\mathbf{P < 0.001}$) remains highly reliable and valid.
 
- Multiple Comparison of Means - Tukey HSD, FWER=0.05                                            
-==========================================================================================================================================
-                      group1                                            group2                      meandiff p-adj   lower   upper  reject
-------------------------------------------------------------------------------------------------------------------------------------------
-                              East Asia & Pacific                             Europe & Central Asia   1.6432    0.0  1.3743   1.912   True
-                              East Asia & Pacific                         Latin America & Caribbean   0.1379 0.8119 -0.1565  0.4323  False
-                              East Asia & Pacific Middle East, North Africa, Afghanistan & Pakistan   1.5015    0.0  1.1686  1.8344   True
-                              East Asia & Pacific                                     North America   3.7841    0.0   3.055  4.5132   True
-                              East Asia & Pacific                                        South Asia   0.6362 0.0087  0.0992  1.1731   True
-                              East Asia & Pacific                                Sub-Saharan Africa  -0.4265 0.0002 -0.7083 -0.1448   True
-                            Europe & Central Asia                         Latin America & Caribbean  -1.5052    0.0 -1.7675  -1.243   True
-                            Europe & Central Asia Middle East, North Africa, Afghanistan & Pakistan  -0.1416 0.8178 -0.4465  0.1632  False
-                            Europe & Central Asia                                     North America   2.1409    0.0  1.4242  2.8577   True
-                            Europe & Central Asia                                        South Asia   -1.007    0.0  -1.527  -0.487   True
-                            Europe & Central Asia                                Sub-Saharan Africa  -2.0697    0.0 -2.3177 -1.8217   True
-                        Latin America & Caribbean Middle East, North Africa, Afghanistan & Pakistan   1.3636    0.0   1.036  1.6912   True
-                        Latin America & Caribbean                                     North America   3.6462    0.0  2.9195  4.3729   True
-                        Latin America & Caribbean                                        South Asia   0.4983 0.0857 -0.0354  1.0319  False
-                        Latin America & Caribbean                                Sub-Saharan Africa  -0.5645    0.0 -0.8399  -0.289   True
-Middle East, North Africa, Afghanistan & Pakistan                                     North America   2.2826    0.0  1.5394  3.0257   True
-Middle East, North Africa, Afghanistan & Pakistan                                        South Asia  -0.8654 0.0001 -1.4212 -0.3095   True
-Middle East, North Africa, Afghanistan & Pakistan                                Sub-Saharan Africa  -1.9281    0.0 -2.2444 -1.6118   True
-                                    North America                                        South Asia  -3.1479    0.0 -4.0022 -2.2937   True
-                                    North America                                Sub-Saharan Africa  -4.2106    0.0 -4.9323  -3.489   True
-                                       South Asia                                Sub-Saharan Africa  -1.0627    0.0 -1.5896 -0.5359   True
-------------------------------------------------------------------------------------------------------------------------------------------
+Multiple Comparison of Means - Tukey HSD (FWER=0.05) by Region
+
+| group1 | group2 | meandiff | p-adj | lower | upper | reject |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **East Asia & Pacific** | Europe & Central Asia | $1.6432$ | $0.0$ | $1.3743$ | $1.9120$ | True |
+| **East Asia & Pacific** | Latin America & Caribbean | $0.1379$ | $0.8119$ | $-0.1565$ | $0.4323$ | False |
+| **East Asia & Pacific** | Middle East, North Africa, Afghanistan & Pakistan | $1.5015$ | $0.0$ | $1.1686$ | $1.8344$ | True |
+| **East Asia & Pacific** | North America | $3.7841$ | $0.0$ | $3.0550$ | $4.5132$ | True |
+| **East Asia & Pacific** | South Asia | $0.6362$ | $0.0087$ | $0.0992$ | $1.1731$ | True |
+| **East Asia & Pacific** | Sub-Saharan Africa | $-0.4265$ | $0.0002$ | $-0.7083$ | $-0.1448$ | True |
+| Europe & Central Asia | Latin America & Caribbean | $-1.5052$ | $0.0$ | $-1.7675$ | $-1.2430$ | True |
+| Europe & Central Asia | Middle East, North Africa, Afghanistan & Pakistan | $-0.1416$ | $0.8178$ | $-0.4465$ | $0.1632$ | False |
+| Europe & Central Asia | North America | $2.1409$ | $0.0$ | $1.4242$ | $2.8577$ | True |
+| Europe & Central Asia | South Asia | $-1.0070$ | $0.0$ | $-1.5270$ | $-0.4870$ | True |
+| Europe & Central Asia | Sub-Saharan Africa | $-2.0697$ | $0.0$ | $-2.3177$ | $-1.8217$ | True |
+| Latin America & Caribbean | Middle East, North Africa, Afghanistan & Pakistan | $1.3636$ | $0.0$ | $1.0360$ | $1.6912$ | True |
+| Latin America & Caribbean | North America | $3.6462$ | $0.0$ | $2.9195$ | $4.3729$ | True |
+| Latin America & Caribbean | South Asia | $0.4983$ | $0.0857$ | $-0.0354$ | $1.0319$ | False |
+| Latin America & Caribbean | Sub-Saharan Africa | $-0.5645$ | $0.0$ | $-0.8399$ | $-0.2890$ | True |
+| Middle East, North Africa, Afghanistan & Pakistan | North America | $2.2826$ | $0.0$ | $1.5394$ | $3.0257$ | True |
+| Middle East, North Africa, Afghanistan & Pakistan | South Asia | $-0.8654$ | $0.0001$ | $-1.4212$ | $-0.3095$ | True |
+| Middle East, North Africa, Afghanistan & Pakistan | Sub-Saharan Africa | $-1.9281$ | $0.0$ | $-2.2444$ | $-1.6118$ | True |
+| North America | South Asia | $-3.1479$ | $0.0$ | $-4.0022$ | $-2.2937$ | True |
+| North America | Sub-Saharan Africa | $-4.2106$ | $0.0$ | $-4.9323$ | $-3.4890$ | True |
+| South Asia | Sub-Saharan Africa | $-1.0627$ | $0.0$ | $-1.5896$ | $-0.5359$ | True |
 
 * 	The Tukey HSD test confirmed that regional classification is a fundamental and statistically distinct determinant of national wealth, as 18 out of 21 regional comparisons showed a statistically significant difference ($\mathbf{P < 0.05}$). The analysis highlighted profound economic disparities, most notably that $\text{Log}(\text{GDP})$ in North America is significantly higher than in every other region, while the difference between East Asia & Pacific and Latin America & Caribbean was found to be statistically insignificant ($\mathbf{P=0.8119}$), suggesting their average wealth levels are comparable.
 
@@ -256,6 +257,7 @@ Middle East, North Africa, Afghanistan & Pakistan                               
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
