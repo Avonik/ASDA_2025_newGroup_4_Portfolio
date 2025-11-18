@@ -96,9 +96,19 @@ Name: carbon_intensity, dtype: float64
 -----------------------------------------------------
 Interpretation: A lower intensity suggests more economically efficient (cleaner) production.
 
+*   The analysis of average Carbon Intensity ($\text{CO}_2$/$\text{GDP}$) shows a non-monotonic trend where the Upper middle income group is the most intensive (1.675 tons $\text{CO}_2$ per Million USD GDP), while the High income group is significantly cleaner (0.647 tons), reflecting improved efficiency post-industrialization.
 
+![Histogram](../additional_material/images/1histogram_co2_intensity.png)
 
-![ANOVA Residuals](../additional_material/images/Residuals.jpg)
+*   Data is left skewed. We try square root transformation.
+
+![Histogram & Boxplot](../additional_material/images/2sqrt_c02_intensity.png)
+
+*   Data is right skewed even after square root transformation. We will try to clean outliers by using Interquartile Range (IQR) method.
+
+![Histogram & Boxplot](../additional_material/images/22sqrt_c02_intensity.png)
+
+* The distribution is more normalized after we clean outliers. We can run Anova test now.
 
 ### III. The Digital and Physical Divide
 Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the modern economy.
@@ -106,6 +116,7 @@ Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the m
 * **Low Income:** High variance, with many nations having less than 50% access. This infrastructure gap makes it exponentially harder for these economies to catch up, creating a feedback loop of inequality.
 
 <img width="1063" height="644" alt="image" src="https://github.com/user-attachments/assets/b79c583d-866e-432d-a49a-3264624781ee" />
+
 
 
 
@@ -127,6 +138,7 @@ A powerful indicator of a nation's development phase is the relationship between
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
