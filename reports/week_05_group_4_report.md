@@ -97,7 +97,7 @@ Prosperity comes with a price. Our analysis shows a strong positive correlation 
 
 Interpretation: A lower intensity suggests more economically efficient (cleaner) production.
 
-*   The analysis of average Carbon Intensity ($\text{CO}_2$/ text{GDP}$) shows a non-monotonic trend where the Upper middle income group is the most intensive (1.675 tons $\text{CO}_2$ per Million USD GDP), while the High income group is significantly cleaner (0.647 tons), reflecting improved efficiency post-industrialization.
+*   The analysis of average Carbon Intensity ($\text{CO}_2$/ GDP) shows a non-monotonic trend where the Upper middle income group is the most intensive (1.675 tons $\text{CO}_2$ per Million USD GDP), while the High income group is significantly cleaner (0.647 tons), reflecting improved efficiency post-industrialization.
 
 ![Histogram](../additional_material/images/1histogram_co2_intensity.png)
 
@@ -260,6 +260,7 @@ Multiple Comparison of Means - Tukey HSD (FWER=0.05) by Region
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
