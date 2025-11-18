@@ -104,7 +104,24 @@ A powerful indicator of a nation's development phase is the relationship between
 
 <img width="856" height="600" alt="image" src="https://github.com/user-attachments/assets/0b4fa649-be02-40c6-96bf-a4d0cfdbaa02" />
 
+---
 
+## 6. ANOVA Results
+
+Below are the visual outputs from the ANOVA test performed:
+
+### **Residuals**
+![ANOVA Residuals](../additional_material/images/Residuals.jpg)
+
+### **Q–Q Plot of Residuals**
+![Q-Q Plot](../additional_material/images/QQPlot.jpg)
+
+### **Tukey HSD Post-Hoc Results**
+![Tukey HSD Plot](../additional_material/images/TukeyHSDPlot.jpg)
+
+(Replace the image paths with actual saved plot paths from your notebook)
+
+---
 ### IV. Conclusion
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
