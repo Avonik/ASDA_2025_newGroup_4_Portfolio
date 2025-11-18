@@ -83,6 +83,23 @@ Prosperity comes with a price. Our analysis shows a strong positive correlation 
 
 <img width="905" height="567" alt="image" src="https://github.com/user-attachments/assets/1bbee65e-838f-4ad9-9808-17ee1609488b" />
 
+**Average Carbon Intensity (CO2 / GDP) by Income Group**
+
+Scaled Average Carbon Intensity (CO2 / GDP) by Income Group:
+-----------------------------------------------------
+income_group
+Upper middle income    1.695194
+Lower middle income    0.835624
+High income            0.650598
+Low income             0.359056
+Name: carbon_intensity, dtype: float64
+-----------------------------------------------------
+Interpretation: A lower intensity suggests more economically efficient (cleaner) production.
+
+
+
+![ANOVA Residuals](../additional_material/images/Residuals.jpg)
+
 ### III. The Digital and Physical Divide
 Infrastructure metrics like `access_to_electricity` acts as gatekeepers to the modern economy.
 * **High Income:** Near 100% saturation.
@@ -104,27 +121,13 @@ A powerful indicator of a nation's development phase is the relationship between
 
 <img width="856" height="600" alt="image" src="https://github.com/user-attachments/assets/0b4fa649-be02-40c6-96bf-a4d0cfdbaa02" />
 
----
-
-## 6. ANOVA Results
-
-Below are the visual outputs from the ANOVA test performed:
-
-### **Residuals**
-![ANOVA Residuals](../additional_material/images/Residuals.jpg)
-
-### **Q–Q Plot of Residuals**
-![Q-Q Plot](../additional_material/images/QQPlot.jpg)
-
-### **Tukey HSD Post-Hoc Results**
-![Tukey HSD Plot](../additional_material/images/TukeyHSDPlot.jpg)
-
 
 ---
 ### IV. Conclusion
 The data suggests that economic development is the primary engine for improving human life span and basic access to services. However, the current model of development is resource-intensive. The challenge for the next century, as shown by the data, is to help Low and Middle-income countries achieve High-income health and infrastructure standards without replicating the high-carbon trajectory of the current wealthy nations.
 
 ---
+
 
 
 
