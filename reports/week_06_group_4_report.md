@@ -119,3 +119,94 @@ The analysis confirms that nations investing a larger share of their GDP into he
 
 * **Group Differences:** The correlation is likely driven heavily by Low and Middle-Income nations, where basic health funding (vaccines, sanitation, maternal care) drastically reduces mortality. In High-Income nations, the relationship weakens; simply spending more money (as seen in the outlier case of the USA) does not guarantee the highest life expectancy, suggesting that lifestyle factors (diet, exercise) and healthcare efficiency play a larger role at that stage.
 * **Causation vs. Correlation:** While the link is strong, expenditure is not the sole cause of longevity. High spending is often a proxy for overall economic development, better education, and infrastructure—all of which contribute to living longer. Therefore, while funding is necessary for long life, it is not sufficient on its own.
+
+
+# III. Correlation: CO2 Emissions & Individuals Using Internet (THEA)
+
+AI Disclaimer: I wrote this report with the help of the LLMs ChatGPT 5.1 and Claude.
+
+## 1. Research Question (RQ)
+
+Does a higher number of Individuals Using Internet correlate with higher CO2 Emissions across different nations?
+
+## 2. Data Inspection and Handling
+
+We analyzed the relationship between **Individuals Using Internet** and **CO2 Emissions in kilotonnes** for the period 1990-2019. 
+Initial inspection of the data distribution revealed significant challenges: 
+
+* **Skewness**: The CO2 Emission data was highly right-skewed. The majority of countries emit a relatively 
+            small amount of CO2 Emissions, while a few nations emit a disproportionately high amount.
+* **Non-Linearity**: Preliminary scatter plots indicatedCO₂ emissions and internet usage is clearly non-linear. Most countries cluster at very low emission levels with highly variable internet usage, while increases in CO₂ emissions beyond this range show only gradual changes in internet usage.
+
+
+![Distributions CO2 n IUI.png](../additional_material/images/Distributions%20CO2%20n%20IUI.png)
+![CO2 vs IUI final.png](../additional_material/images/CO2%20vs%20IUI%20final.png)
+
+
+**Transformations & Method:**
+To address these issues without removing valid data points we applied two techniques:
+1.  **Log-Transformation:** We applied a natural logarithm to the CO2 Emission variable. This normalized the distribution and linearized the relationship for better visualization.
+2.  **Robust Statistics:** We opted for **Spearman’s Rank Correlation** rather than Pearson. Spearman is non-parametric and evaluates rank order rather than raw values, making it robust to the extreme outliers observed in the expenditure data.
+
+### 3. Visualization
+The scatter plot below visualizes the relationship after applying the log-transformation. The data points are color-coded by **Income Group** to highlight economic disparities.
+
+![Fig nr 3_Thea.png](../additional_material/images/Fig%20nr%203_Thea.png)
+
+### 4. Outlier Analysis
+
+CO₂ Emissions Outlier
+The most extreme outlier came from China (2019), with a CO₂ value of 10,762,824 units. China’s high industrial output and large population make it structurally incomparable to most countries, which explains its influence on the distribution.
+
+Internet Usage Outlier
+The most extreme internet usage value was from Bahrain (2019), with 99.7% of the population online. This represents near-universal connectivity in a small, high-income country and produces a long upper tail in the data.
+
+Removing these two outliers changed the dataset’s shape from (5247, 20) to (5245, 20), confirming that only two observations were removed.
+
+### 5. Statistical Test
+
+Performed a Spearman Rank Correlation to quantify the strength of the association after log-transforming both variables (CO₂ emissions and individuals using the internet). Because both variables violated normality, a non-parametric test is appropriate.
+
+Method: Spearman Rank Correlation
+Correlation Coefficient: r = 0.3068
+95% CI: [0.28, 0.33]
+Sample Size: n = 5,245
+P-value: 9.47 × 10⁻¹¹⁵
+Power: 1.0
+
+Result:
+The p-value is far below the 0.05 threshold. We reject the null hypothesis and conclude that there is a statistically significant positive relationship between CO₂ emissions and internet usage rates when using the log-transformed data. However, the correlation is moderate, not strong, indicating that although the variables move together, the association is not tight.
+
+--- Spearman Correlation by Income Group ---
+* Low income               : r = 0.2540 * (n=661)
+* Upper middle income      : r = 0.0910 * (n=1486)
+* Lower middle income      : r = 0.2543 * (n=1335)
+* High income              : r = 0.1413 * (n=1763)
+
+### 6. Interpretation
+
+1. Shared Development Drivers:
+Higher internet usage and higher emissions are both linked to industrialisation, urbanisation, and economic growth. Energy-intensive economic structures often coincide with advanced digital infrastructure.
+
+    Differences between income groups:
+    
+    The correlations vary noticeably across income groups, suggesting that the link between CO₂ emissions and internet use depends on a country’s development stage.
+    The correlation is strongest in lower-income groups where economic growth simultaneously drives both energy use and digital expansion. As countries become more economically advanced, the relationship weakens because internet usage approaches universal levels while emissions become shaped by factors unrelated to digital infrastructure (energy mix, industrial composition, efficiency).
+    
+    This supports the interpretation that the correlation reflects development pathways, not a direct causal link between emissions and digital access.
+  
+2. Diminishing Returns:
+As seen in the log-transformed scatterplot, the relationship is non-linear. In low- and middle-income countries, early increases in energy consumption and infrastructure rapidly expand digital access. In high-income countries, connectivity is already high, so additional emissions do not translate into large increases in internet use.
+
+3. Outliers do not distort the outcome:
+The correlation was almost unchanged when outliers were removed:
+
+With outliers: r = 0.3072
+Without outliers: r = 0.3068
+This indicates that the relationship is robust and not driven by extreme values.
+
+4. No assumption of causality:
+Higher emissions do not cause higher internet usage, nor vice versa. Both variables reflect a country’s position on the development pathway: industrial structure, energy systems, population distribution, and technological penetration.
+
+
+
