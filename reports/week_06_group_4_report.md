@@ -153,7 +153,8 @@ To address these issues without removing valid data points we applied two techni
 ### 3. Visualization
 The scatter plot below visualizes the relationship after applying the log-transformation. The data points are color-coded by **Income Group** to highlight economic disparities.
 
-![Fig nr 3_Thea.png](../additional_material/images/Fig%20nr%203_Thea.png)
+<img width="608" height="434" alt="grafik" src="https://github.com/user-attachments/assets/cedc5515-3a24-481f-ae3a-f1310e295e25" />
+
 
 ### 4. Outlier Analysis
 
