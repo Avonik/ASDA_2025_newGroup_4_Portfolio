@@ -129,6 +129,10 @@ AI Disclaimer: I wrote this report with the help of the LLMs ChatGPT 5.1 and Cla
 
 Does a higher number of Individuals Using Internet correlate with higher CO2 Emissions across different nations?
 
+
+<img width="1289" height="809" alt="grafik" src="https://github.com/user-attachments/assets/17770ea1-b2d5-4804-9cee-991ab161338e" />
+
+
 ## 2. Data Inspection and Handling
 
 We analyzed the relationship between **Individuals Using Internet** and **CO2 Emissions in kilotonnes** for the period 1990-2019. 
