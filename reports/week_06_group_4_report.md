@@ -2,8 +2,8 @@
 
 ## 0. Authors of the report
 * **Name:** Group 4 
-*  Paata, Julian, Thea, Tejas, Betuel: Statistical Analysis, Visualisation, Reporting
-*
+*  Paata, Julian, Thea: Statistical Analysis, Visualisation, Reporting
+
 
 ## Statistical Diagnostics of GDP and Agricultural Land: Normality Tests, Data Transformations, and Correlation Analysis (Paata)
 
