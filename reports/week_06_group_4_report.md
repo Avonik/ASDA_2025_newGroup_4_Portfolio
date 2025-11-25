@@ -84,7 +84,7 @@ Initial inspection of the data distribution revealed significant challenges:
 * **Skewness:** The health expenditure data was highly right-skewed. The majority of countries spend a relatively small percentage of their GDP on health, while a few wealthy nations (outliers such as the United States) spend a disproportionately high amount.
 * **Non-Linearity:** Preliminary scatter plots indicated a non-linear relationship. The data followed a logarithmic curve, suggesting "diminishing returns"—initial increases in spending yield massive gains in life expectancy, but this effect plateaus for developed nations.
 
-<img width="1478" height="501" alt="image" src="https://github.com/user-attachments/assets/f0ff9767-030e-4a42-855d-cd80ca1965de" />
+![Distribution after outlier removal](https://github.com/Avonik/ASDA_2025_newGroup_4_Portfolio/blob/main/additional_material/images/fig%201.png)
 <img width="1055" height="608" alt="image" src="https://github.com/user-attachments/assets/981d2379-2c00-4ff1-8ec1-58802b08f91b" />
 
 **Transformations & Method:**
