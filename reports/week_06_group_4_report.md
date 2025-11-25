@@ -139,10 +139,10 @@ Initial inspection of the data distribution revealed significant challenges:
 * **Non-Linearity**: Preliminary scatter plots indicatedCO₂ emissions and internet usage is clearly non-linear. Most countries cluster at very low emission levels with highly variable internet usage, while increases in CO₂ emissions beyond this range show only gradual changes in internet usage.
 
 
-![Distributions CO2 n IUI.png](../additional_material/images/Distributions%20CO2%20n%20IUI.png)
+![Distributions CO2 n IUI.png](https://github.com/Avonik/ASDA_2025_newGroup_4_Portfolio/blob/main/additional_material/images/fig%201.png)
 
 
-![CO2 vs IUI final.png](../additional_material/images/CO2%20vs%20IUI%20final.png)
+![CO2 vs IUI final.png](https://github.com/Avonik/ASDA_2025_newGroup_4_Portfolio/blob/main/additional_material/images/fig%202.png)
 
 
 **Transformations & Method:**
